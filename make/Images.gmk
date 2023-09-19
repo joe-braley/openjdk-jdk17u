@@ -121,7 +121,6 @@ ifeq ($(BUILD_CDS_ARCHIVE), true)
   else
     CDS_ARCHIVE := lib/server/classes.jsa
     CDS_NOCOOPS_ARCHIVE := lib/server/classes_nocoops.jsa
-    echo $(CDS_ARCHIVE)
   endif
 
   $(eval $(call SetupExecute, gen_cds_archive_jdk, \
