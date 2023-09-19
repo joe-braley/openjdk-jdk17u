@@ -122,7 +122,7 @@ ifeq ($(BUILD_CDS_ARCHIVE), true)
     CDS_ARCHIVE := lib/server/classes.jsa
     CDS_NOCOOPS_ARCHIVE := lib/server/classes_nocoops.jsa
   endif
-
+  echo 'Creating CDS archive for jdk image'
   $(eval $(call SetupExecute, gen_cds_archive_jdk, \
       WARN := Creating CDS archive for jdk image, \
       DEPS := $(jlink_jdk), \
