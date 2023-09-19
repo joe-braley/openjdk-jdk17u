@@ -123,6 +123,11 @@ ifeq ($(BUILD_CDS_ARCHIVE), true)
     CDS_NOCOOPS_ARCHIVE := lib/server/classes_nocoops.jsa
   endif
 
+  @echo "..."
+  @echo $(JDK_IMAGE_DIR)
+  @echo $(CDS_ARCHIVE)
+  @echo "..."
+
   $(eval $(call SetupExecute, gen_cds_archive_jdk, \
       WARN := Creating CDS archive for jdk image, \
       DEPS := $(jlink_jdk), \
@@ -134,6 +139,9 @@ ifeq ($(BUILD_CDS_ARCHIVE), true)
   ))
 
   JDK_TARGETS += $(gen_cds_archive_jdk)
+  @echo $(JDK_TARGETS)
+  @echo $(LOG_INFO)
+  @echo "..."
 
   $(eval $(call SetupExecute, gen_cds_archive_jre, \
       WARN := Creating CDS archive for jre image, \
