@@ -124,8 +124,6 @@ ifeq ($(BUILD_CDS_ARCHIVE), true)
     echo $(CDS_ARCHIVE)
   endif
 
-  echo $(JDK_IMAGE_DIR)
-
   $(eval $(call SetupExecute, gen_cds_archive_jdk, \
       WARN := Creating CDS archive for jdk image, \
       DEPS := $(jlink_jdk), \
@@ -137,8 +135,6 @@ ifeq ($(BUILD_CDS_ARCHIVE), true)
   ))
 
   JDK_TARGETS += $(gen_cds_archive_jdk)
-  echo $(JDK_TARGETS)
-  echo $(LOG_INFO)
 
   $(eval $(call SetupExecute, gen_cds_archive_jre, \
       WARN := Creating CDS archive for jre image, \
